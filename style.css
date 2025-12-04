@@ -261,6 +261,14 @@ body{
     font-size: 13px;
   }
 }
+@media (max-width: 768px) {
+  .navbar-collapse .d-flex {
+    flex-direction: column;  /* تخلي العناصر تتراص تحت بعض */
+    gap: 15px;               /* مسافة بين العناصر */
+    align-items: flex-start; /* تحاذي العناصر لليسار */
+    padding: 10px 0;
+  }
+}
 
 
 
