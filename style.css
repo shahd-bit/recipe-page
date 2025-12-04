@@ -217,7 +217,51 @@
 body{
   background-color: #fffbea;
 }
-#recipeSection{
+#recipeSection {
   background-color: white;
   border-radius: 30px;
+  max-width: 900px;   
+  margin: 40px auto;  
+  padding: 20px 30px; 
 }
+
+
+@media (max-width: 768px) {
+  #recipeSection {
+    max-width: 95%;
+    padding: 10px 15px;  /* قللنا البادينج */
+    margin: 20px auto;
+    border-radius: 20px;
+  }
+
+  .col-md-6.position-relative {
+    height: 400px; /* قللنا ارتفاع الصورة */
+  }
+
+  .bottom-info-box {
+    width: 95%;
+    padding: 8px 10px;
+  }
+
+  .steps-list li {
+    font-size: 13px;
+    padding-left: 30px;
+  }
+
+  .tag {
+    font-size: 12px;
+    padding: 2px 8px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 13px;
+  }
+}
+
+
+
+
