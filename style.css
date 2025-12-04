@@ -220,7 +220,7 @@ body{
 #recipeSection {
   background-color: white;
   border-radius: 30px;
-  max-width: 900px;   
+
   margin: 40px auto;  
   padding: 20px 30px; 
 }
@@ -229,13 +229,13 @@ body{
 @media (max-width: 768px) {
   #recipeSection {
     max-width: 95%;
-    padding: 10px 15px;  /* قللنا البادينج */
+    padding: 10px 15px;  
     margin: 20px auto;
     border-radius: 20px;
   }
 
   .col-md-6.position-relative {
-    height: 400px; /* قللنا ارتفاع الصورة */
+    height: 400px; 
   }
 
   .bottom-info-box {
