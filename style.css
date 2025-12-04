@@ -220,9 +220,25 @@ body{
 #recipeSection {
   background-color: white;
   border-radius: 30px;
-
+  max-width: 900px;   
   margin: 40px auto;  
   padding: 20px 30px; 
+}
+#recipeTabs {
+  display: flex;
+  justify-content: space-between; /* توزع التابات بالتساوي */
+  flex-wrap: nowrap;              /* تمنع الالتفاف */
+}
+
+#recipeTabs .nav-item {
+  flex: 1;                        /* كل تاب ياخد نفس العرض */
+  text-align: center;             /* النص في المنتصف */
+}
+
+#recipeTabs .nav-link {
+  white-space: normal;            /* يقدر النص يكسر سطر لو طويل */
+  padding: 8px 5px;               /* تصغير البادينج عشان يناسب الموبايل */
+  font-size: 14px;                /* تصغير الخط على الموبايل */
 }
 
 
