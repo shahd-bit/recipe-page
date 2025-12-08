@@ -226,19 +226,19 @@ body{
 }
 #recipeTabs {
   display: flex;
-  justify-content: space-between; /* توزع التابات بالتساوي */
-  flex-wrap: nowrap;              /* تمنع الالتفاف */
+  justify-content: space-between; 
+  flex-wrap: nowrap;              
 }
 
 #recipeTabs .nav-item {
-  flex: 1;                        /* كل تاب ياخد نفس العرض */
-  text-align: center;             /* النص في المنتصف */
+  flex: 1;                        
+  text-align: center;            
 }
 
 #recipeTabs .nav-link {
-  white-space: normal;            /* يقدر النص يكسر سطر لو طويل */
-  padding: 8px 5px;               /* تصغير البادينج عشان يناسب الموبايل */
-  font-size: 14px;                /* تصغير الخط على الموبايل */
+  white-space: normal;            
+  padding: 8px 5px;               
+  font-size: 14px;              
 }
 
 
@@ -279,9 +279,9 @@ body{
 }
 @media (max-width: 768px) {
   .navbar-collapse .d-flex {
-    flex-direction: column;  /* تخلي العناصر تتراص تحت بعض */
-    gap: 15px;               /* مسافة بين العناصر */
-    align-items: flex-start; /* تحاذي العناصر لليسار */
+    flex-direction: column;  
+    gap: 15px;               
+    align-items: flex-start; 
     padding: 10px 0;
   }
 }

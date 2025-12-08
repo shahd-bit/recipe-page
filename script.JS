@@ -1,4 +1,4 @@
-const recipes = [
+var recipes = [
   {
     image: "./imges/photo-1547592166-23ac45744acd.avif",
     title: "French Onion Soup",
@@ -155,26 +155,26 @@ const recipes = [
   }
 ];
 
-let currentRecipe = 0;
+var currentRecipe = 0;
 
-const recipeImage = document.getElementById("recipeImage");
-const recipeTitle = document.getElementById("recipeTitle");
-const recipeDesc = document.getElementById("recipeDesc");
-const tag1 = document.getElementById("tag1");
-const tag2 = document.getElementById("tag2");
-const calories = document.getElementById("calories");
-const time = document.getElementById("time");
-const servings = document.getElementById("servings");
+var recipeImage = document.getElementById("recipeImage");
+var recipeTitle = document.getElementById("recipeTitle");
+var recipeDesc = document.getElementById("recipeDesc");
+var tag1 = document.getElementById("tag1");
+var tag2 = document.getElementById("tag2");
+var calories = document.getElementById("calories");
+var time = document.getElementById("time");
+var servings = document.getElementById("servings");
 
-const ingredientsList = document.getElementById("ingredientsList");
-const instructionsList = document.getElementById("instructionsList");
-const nutritionBox = document.getElementById("nutritionBox");
-const tipsList = document.getElementById("tipsList");
+var ingredientsList = document.getElementById("ingredientsList");
+var instructionsList = document.getElementById("instructionsList");
+var nutritionBox = document.getElementById("nutritionBox");
+var tipsList = document.getElementById("tipsList");
 
-const changeBtn = document.getElementById("changeRecipeBtn");
+var changeBtn = document.getElementById("changeRecipeBtn");
 
 function updateRecipe() {
-  const recipe = recipes[currentRecipe];
+  var recipe = recipes[currentRecipe];
 
   recipeImage.src = recipe.image;
   recipeTitle.textContent = recipe.title;
@@ -186,54 +186,67 @@ function updateRecipe() {
   servings.textContent = recipe.servings;
 
   ingredientsList.innerHTML = "";
-  recipe.ingredients.forEach(step => {
-    const li = document.createElement("li");
+  recipe.ingredients.forEach(function(step) {
+    var li = document.createElement("li");
     li.textContent = step;
     ingredientsList.appendChild(li);
   });
 
   instructionsList.innerHTML = "";
-  const ol = document.createElement("ol");
+  var ol = document.createElement("ol");
   ol.classList.add("steps-list");
-  recipe.instructions.forEach(step => {
-    const li = document.createElement("li");
+  recipe.instructions.forEach(function(step) {
+    var li = document.createElement("li");
     li.textContent = step;
     ol.appendChild(li);
   });
   instructionsList.appendChild(ol);
 
-
   nutritionBox.innerHTML = "";
-  recipe.nutrition.forEach(item => {
-    const div = document.createElement("div");
+  recipe.nutrition.forEach(function(item) {
+    var div = document.createElement("div");
     div.classList.add("col-md-3", "mb-2");
-    div.innerHTML = `<p class="fw-bold mb-0">${item.split(":")[0]}</p><span class="text-muted">${item.split(":")[1]}</span>`;
+
+    var parts = item.split(":");
+    div.innerHTML =
+      "<p class='fw-bold mb-0'>" +
+      parts[0] +
+      "</p><span class='text-muted'>" +
+      parts[1] +
+      "</span>";
+
     nutritionBox.appendChild(div);
   });
 
-
   tipsList.innerHTML = "";
-  const ul = document.createElement("ul");
-  recipe.tips.forEach(tip => {
-    const li = document.createElement("li");
+  var ul = document.createElement("ul");
+  recipe.tips.forEach(function(tip) {
+    var li = document.createElement("li");
     li.textContent = tip;
     ul.appendChild(li);
   });
   tipsList.appendChild(ul);
 }
-changeBtn.addEventListener("click", () => {
-  let newRecipe;
+
+changeBtn.addEventListener("click", function() {
+  var newRecipe;
+
   do {
     newRecipe = Math.floor(Math.random() * recipes.length);
-  } while (newRecipe === currentRecipe); 
+  } while (newRecipe === currentRecipe);
+
   currentRecipe = newRecipe;
   updateRecipe();
 
-  const firstTab = document.querySelector('#recipeTabs .nav-link');
+  var firstTab = document.querySelector('#recipeTabs .nav-link');
   firstTab.classList.add("active");
-  document.querySelectorAll('.tab-pane').forEach(tab => tab.classList.remove("show","active"));
-  document.getElementById(firstTab.dataset.bsTarget.slice(1)).classList.add("show","active");
-});
 
+  document.querySelectorAll('.tab-pane').forEach(function(tab) {
+    tab.classList.remove("show", "active");
+  });
+
+  var targetId = firstTab.dataset.bsTarget.slice(1);
+  document.getElementById(targetId).classList.add("show", "active");
+});
 
 updateRecipe();
